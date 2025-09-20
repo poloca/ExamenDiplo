@@ -173,7 +173,7 @@ if df_gasolina is not None and modelo_data is not None:
             col1, col2, col3 = st.columns([1, 2, 1])
             
             with col2:
-                st.markdown("### 🎯 Resultado de la Predicción")
+                st.markdown("### Resultado de la Predicción")
                 st.markdown(f"""
                 <div style="
                     background: linear-gradient(90deg, #fdcddc 0%, #fa82a7 100%);
@@ -189,39 +189,6 @@ if df_gasolina is not None and modelo_data is not None:
                     </p>
                 </div>
                 """, unsafe_allow_html=True)
-    
-    
-    # Información del modelo
-    st.markdown("---")
-    st.markdown("### 🤖 Información del Modelo")
-    
-    col1, col2, col3 = st.columns(3)
-    
-    metricas = modelo_data.get('metricas', {})
-    
-    with col1:
-        r2 = metricas.get('r2_test', 0)
-        st.metric(
-            label="R² Score",
-            value=f"{r2:.3f}",
-            help="Coeficiente de determinación (0-1, mayor es mejor)"
-        )
-    
-    with col2:
-        rmse = metricas.get('rmse_test', 0)
-        st.metric(
-            label="RMSE",
-            value=f"{rmse:.3f}",
-            help="Error cuadrático medio (menor es mejor)"
-        )
-    
-    with col3:
-        mae = metricas.get('mae_test', 0)
-        st.metric(
-            label="MAE",
-            value=f"{mae:.3f}",
-            help="Error absoluto medio (menor es mejor)"
-        )
 
 else:
     st.error("""
