@@ -168,7 +168,7 @@ if df_gasolina is not None and modelo_data is not None:
                         label="Precio Predicho",
                         value=f"${precio_predicho:.2f}"
                     )
-            
+            st.write("--")
             # Mostrar resultado principal
             col1, col2, col3 = st.columns([1, 2, 1])
             
@@ -176,7 +176,7 @@ if df_gasolina is not None and modelo_data is not None:
                 st.markdown("### 🎯 Resultado de la Predicción")
                 st.markdown(f"""
                 <div style="
-                    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+                    background: linear-gradient(90deg, #fdcddc 0%, #fa82a7 100%);
                     padding: 2rem;
                     border-radius: 10px;
                     text-align: center;
